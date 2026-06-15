@@ -47,13 +47,13 @@ const ICONS: Record<string, ComponentType<{ className?: string }>> = {
 export const Route = createFileRoute("/docs")({
   head: () => ({
     meta: [
-      { title: "Geo Agents — Documentación técnica" },
+      { title: "GeoNexus — Documentación técnica" },
       {
         name: "description",
         content:
-          "Documentación técnica completa de Geo Agents: instalación de escritorio, CLI, comandos Tauri, API frontend, hooks, arquitectura y roadmap de la plataforma GIS con IA.",
+          "Documentación técnica completa de GeoNexus: instalación de escritorio, CLI, comandos Tauri, API frontend, hooks, arquitectura y roadmap de la plataforma GIS con IA.",
       },
-      { property: "og:title", content: "Geo Agents — Documentación técnica" },
+      { property: "og:title", content: "GeoNexus — Documentación técnica" },
       {
         property: "og:description",
         content: "Plataforma GIS profesional con IA. Instalación, CLI y referencia de 56+ comandos Tauri.",
@@ -76,7 +76,7 @@ const NAV: NavGroup[] = [
     label: "Instalación",
     items: [
       { text: "Instalación de escritorio", slug: "instalación-de-escritorio", icon: "MonitorDown" },
-      { text: "CLI — geoagents", slug: "cli--geoagents", icon: "TerminalSquare" },
+      { text: "CLI — geonexus", slug: "cli--geonexus", icon: "TerminalSquare" },
     ],
   },
   {
@@ -154,7 +154,7 @@ function DocsPage() {
             <span className="grid h-6 w-6 place-items-center rounded-full bg-gradient-to-br from-primary to-orange-500 text-[10px] font-bold text-primary-foreground">
               G
             </span>
-            Geo Agents
+            GeoNexus
           </div>
 
           {/* Search */}

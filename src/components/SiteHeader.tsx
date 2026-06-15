@@ -44,7 +44,7 @@ export function SiteHeader() {
             <BookOpen className="h-4 w-4" />
           </Link>
           <a
-            href="https://github.com/code-clean/geoagents"
+            href="https://github.com/Naiker12"
             className="grid h-8 w-8 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             aria-label="GitHub"
           >

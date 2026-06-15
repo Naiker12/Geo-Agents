@@ -1,4 +1,4 @@
-# Geo Agents
+# GeoNexus
 
 > Plataforma GIS profesional con inteligencia artificial para urbanistas y especialistas territoriales. Construida con Tauri 2, Rust, React y Python.
 
@@ -6,7 +6,7 @@
 
 ## Introducción
 
-Geo Agents es una aplicación desktop que combina herramientas GIS profesionales con un motor de inteligencia artificial local y en nube. Está diseñada para equipos de planeación urbana y análisis territorial que necesitan procesar documentos, construir grafos de conocimiento y consultar múltiples LLMs sin depender de infraestructura externa.
+GeoNexus es una aplicación desktop que combina herramientas GIS profesionales con un motor de inteligencia artificial local y en nube. Está diseñada para equipos de planeación urbana y análisis territorial que necesitan procesar documentos, construir grafos de conocimiento y consultar múltiples LLMs sin depender de infraestructura externa.
 
 ### ¿Qué incluye?
 
@@ -21,10 +21,10 @@ Geo Agents es una aplicación desktop que combina herramientas GIS profesionales
 ### Los 4 crates Rust
 
 ```
-geoagents-core    →  Tipos compartidos (Message, GraphNode, DataAsset, etc.)
-geoagents-db      →  Repositorios SQLite + migraciones (12 tablas, 8 archivos)
-geoagents-mcp     →  MCP tool schemas para containers
-geoagents-tauri   →  56+ comandos Tauri, eventos, UI shell
+geonexus-core    →  Tipos compartidos (Message, GraphNode, DataAsset, etc.)
+geonexus-db      →  Repositorios SQLite + migraciones (12 tablas, 8 archivos)
+geonexus-mcp     →  MCP tool schemas para containers
+geonexus-tauri   →  56+ comandos Tauri, eventos, UI shell
 ```
 
 ---
@@ -43,8 +43,8 @@ geoagents-tauri   →  56+ comandos Tauri, eventos, UI shell
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/code-clean/geoagents
-cd geoagents
+git clone https://github.com/Naiker12/GeoNexus.git
+cd GeoNexus
 
 # 2. Instalar dependencias frontend
 pnpm install
@@ -82,73 +82,26 @@ Genera un instalador nativo en `src-tauri/target/release/bundle/`.
 
 ## Instalación de escritorio
 
-Geo Agents se distribuye como **aplicación de escritorio nativa** generada con Tauri 2.
+GeoNexus se distribuye como **aplicación de escritorio nativa** generada con Tauri 2.
 Cada plataforma produce un instalador firmado y autocontenido — no requiere runtime externo.
 
 ### Windows 10 / 11
 
-```powershell
-# Instalador .msi / .exe
-winget install CodeClean.Geo Agents
-
-# o descarga directa
-Invoke-WebRequest -Uri https://geoagents.dev/dl/win -OutFile geoagents-setup.exe
-.\geoagents-setup.exe
-```
+Descarga el instalador desde GitHub Releases y ejecútalo.
 
 ### macOS 12+
 
-```bash
-# Homebrew (Apple Silicon e Intel)
-brew install --cask geoagents
-
-# o monta el .dmg descargado
-hdiutil attach Geo Agents.dmg && cp -R "/Volumes/Geo Agents/Geo Agents.app" /Applications
-```
+Descarga el .dmg desde GitHub Releases y arrastra GeoNexus a Aplicaciones.
 
 ### Linux (Wayland / X11)
 
-```bash
-# Debian / Ubuntu
-sudo dpkg -i geoagents_0.9.0_amd64.deb
-
-# Fedora / RHEL
-sudo rpm -i geoagents-0.9.0.x86_64.rpm
-
-# AppImage universal
-chmod +x Geo Agents-0.9.0.AppImage && ./Geo Agents-0.9.0.AppImage
-
-# Arch (AUR)
-yay -S geoagents-bin
-```
-
-> **Nota:** En Linux la app detecta automáticamente el servidor de ventanas
-> (Wayland o X11). El sidecar de IA en Python arranca de forma diferida en el
-> primer uso del chat.
-
-### Instalación por terminal (multiplataforma)
-
-El instalador unificado detecta tu sistema operativo y arquitectura:
-
-```bash
-# macOS / Linux
-curl -fsSL https://geoagents.dev/install.sh | sh
-
-# Windows (PowerShell)
-irm https://geoagents.dev/install.ps1 | iex
-```
-
-| Plataforma | Formatos disponibles | Auto-update |
-|------------|---------------------|-------------|
-| Windows | `.msi`, `.exe` (NSIS) | ✅ |
-| macOS | `.dmg`, `.app` (universal) | ✅ |
-| Linux | `.deb`, `.rpm`, `.AppImage` | AppImage vía updater |
+Descarga el paquete correspondiente (deb, rpm, AppImage) desde GitHub Releases.
 
 ---
 
-## CLI — `geoagents`
+## CLI — `geonexus`
 
-La CLI permite instalar, lanzar y operar Geo Agents sin abrir la interfaz gráfica —
+La CLI permite instalar, lanzar y operar GeoNexus sin abrir la interfaz gráfica —
 ideal para servidores, automatización y pipelines de datos.
 
 ### Comandos principales

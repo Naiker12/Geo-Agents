@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AnimatedTerminal } from "@/components/AnimatedTerminal";
-import appShot from "@/assets/geoagents-app.png.asset.json";
 import {
   ArrowRight,
   Cpu,
@@ -10,18 +9,19 @@ import {
   Terminal,
   Boxes,
   Brain,
+  Github,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Geo Agents — Plataforma GIS profesional con IA" },
+      { title: "GeoNexus — Plataforma GIS profesional con IA" },
       {
         name: "description",
         content:
-          "Geo Agents combina herramientas GIS profesionales con un motor de IA local y en nube. Construida con Tauri 2, Rust, React y Python para urbanistas y especialistas territoriales.",
+          "GeoNexus combina herramientas GIS profesionales con un motor de IA local y en nube. Construida con Tauri 2, Rust, React y Python para urbanistas y especialistas territoriales.",
       },
-      { property: "og:title", content: "Geo Agents — Plataforma GIS profesional con IA" },
+      { property: "og:title", content: "GeoNexus — Plataforma GIS profesional con IA" },
       {
         property: "og:description",
         content: "Procesa documentos, construye grafos de conocimiento y consulta múltiples LLMs sin infraestructura externa.",
@@ -92,7 +92,7 @@ function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              Geo Agents es una aplicación desktop que combina herramientas GIS profesionales
+              GeoNexus es una aplicación desktop que combina herramientas GIS profesionales
               con un motor de inteligencia artificial local y en nube. Para urbanistas y
               especialistas territoriales.
             </p>
@@ -134,8 +134,8 @@ function Home() {
           </div>
           <div className="grain hero-glow relative overflow-hidden rounded-2xl border border-border p-2 md:p-3">
             <img
-              src={appShot.url}
-              alt="Interfaz de escritorio de Geo Agents mostrando el chat con IA, conversaciones y navegación lateral"
+              src="/panel.png"
+              alt="Interfaz de escritorio de GeoNexus mostrando el chat con IA, conversaciones y navegación lateral"
               className="relative w-full rounded-xl border border-border shadow-2xl"
               loading="lazy"
             />
@@ -203,8 +203,16 @@ function Home() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-2 px-4 py-8 text-sm text-muted-foreground md:flex-row">
-          <span>Geo Agents · v0.9-beta · Code Clean · Junio 2026</span>
-          <span>Construido con Tauri 2 · Rust · React · Python</span>
+          <span>GeoNexus · v0.9-beta · Code Clean · Junio 2026</span>
+          <a
+            href="https://github.com/Naiker12"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-foreground transition-colors"
+          >
+            <Github className="h-4 w-4" />
+            <span>GitHub</span>
+          </a>
         </div>
       </footer>
     </div>
