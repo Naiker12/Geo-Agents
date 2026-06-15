@@ -1,0 +1,18 @@
+
+# Geo-Agents - Limpieza de Lovable
+
+## Archivos eliminados
+- .lovable/ (carpeta completa)
+- src/lib/lovable-error-reporting.ts
+
+## Cambios en archivos
+- package.json:
+  - Eliminado @lovable.dev/vite-tanstack-config de devDependencies
+  - Mantenido vite-tsconfig-paths como devDependency
+
+- vite.config.ts:
+  - Reemplazado por una configuración estándar de Vite + React
+
+- src/routes/__root.tsx:
+  - Eliminado importación y uso de reportLovableError
+  - Actualizado meta tags para Geo Agents
