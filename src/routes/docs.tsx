@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { type ComponentType, useEffect, useMemo, useRef, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
-import { Markdown } from "@/components/Markdown";
 import { AnimatedTerminal } from "@/components/AnimatedTerminal";
 import { PageNavigation } from "@/components/docs/PageNavigation";
-import { extractToc, type NavGroup } from "@/lib/toc";
-import rawContent from "@/content/geoagents.md?raw";
+import { Introduction, QuickStart, DesktopInstall } from "@/components/docs/sections";
 import {
   ListTree,
   ChevronRight,
@@ -70,7 +68,6 @@ const NAV: NavGroup[] = [
     items: [
       { text: "Introducción", slug: "introducción", icon: "Compass" },
       { text: "Quick Start", slug: "quick-start", icon: "Rocket" },
-      { text: "Arquitectura", slug: "arquitectura", icon: "Layers" },
     ],
   },
   {
@@ -91,7 +88,6 @@ const NAV: NavGroup[] = [
   {
     label: "Plataforma",
     items: [
-      { text: "Motor y comandos", slug: "motor-y-comandos", icon: "Server" },
       { text: "Experiencia y aplicación", slug: "experiencia-y-aplicación", icon: "Code2" },
       { text: "Módulos principales", slug: "módulos-principales", icon: "Boxes" },
       { text: "Python Sidecar", slug: "python-sidecar", icon: "Brain" },
@@ -102,13 +98,11 @@ const NAV: NavGroup[] = [
     items: [
       { text: "Estado del proyecto", slug: "estado-del-proyecto", icon: "GitBranch" },
       { text: "Pendientes y Roadmap", slug: "pendientes-y-roadmap", icon: "ClipboardList" },
-      { text: "Estructura de archivos", slug: "estructura-de-archivos", icon: "FolderTree" },
     ],
   },
 ];
 
 function DocsPage() {
-  const toc = useMemo(() => extractToc(rawContent).filter((t) => t.depth <= 3), []);
   const [active, setActive] = useState<string>("");
   const [open, setOpen] = useState<Record<string, boolean>>(
     () => Object.fromEntries(NAV.map((g) => [g.label, true]))
@@ -129,8 +123,8 @@ function DocsPage() {
   }, []);
 
   useEffect(() => {
-    const headings = Array.from(
-      document.querySelectorAll<HTMLElement>(".prose-docs h2[id], .prose-docs h3[id]")
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("section[id]")
     );
     const observer = new IntersectionObserver(
       (entries) => {
@@ -141,7 +135,7 @@ function DocsPage() {
       },
       { rootMargin: "-80px 0px -70% 0px", threshold: 0 }
     );
-    headings.forEach((h) => observer.observe(h));
+    sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
 
@@ -266,8 +260,10 @@ function DocsPage() {
               <AnimatedTerminal />
             </div>
 
-            <div className="animate-in fade-in duration-700">
-              <Markdown content={rawContent} />
+            <div className="animate-in fade-in duration-700 space-y-12">
+              <Introduction />
+              <QuickStart />
+              <DesktopInstall />
             </div>
 
             <PageNavigation previous={previous} next={next} />
@@ -289,14 +285,12 @@ function DocsPage() {
               style={{ top: thumb.top, height: thumb.height, opacity: thumb.height ? 1 : 0 }}
             />
             <ul className="space-y-0.5">
-              {toc.map((item) => (
+              {allNavItems.map((item) => (
                 <li key={item.slug}>
                   <a
                     href={`#${item.slug}`}
                     data-slug={item.slug}
-                    className={`block py-1 text-sm transition-colors ${
-                      item.depth === 3 ? "pl-6" : "pl-3"
-                    } ${
+                    className={`block py-1 text-sm transition-colors pl-3 ${
                       active === item.slug
                         ? "font-medium text-primary"
                         : "text-muted-foreground hover:text-foreground"
