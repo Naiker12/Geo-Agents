@@ -3,6 +3,7 @@ import { type ComponentType, useEffect, useMemo, useRef, useState } from "react"
 import { SiteHeader } from "@/components/SiteHeader";
 import { Markdown } from "@/components/Markdown";
 import { AnimatedTerminal } from "@/components/AnimatedTerminal";
+import { PageNavigation } from "@/components/docs/PageNavigation";
 import { extractToc, type NavGroup } from "@/lib/toc";
 import rawContent from "@/content/geoagents.md?raw";
 import {
@@ -116,6 +117,17 @@ function DocsPage() {
   const toggle = (label: string) =>
     setOpen((o) => ({ ...o, [label]: !o[label] }));
 
+  // Flatten all nav items for previous/next navigation
+  const allNavItems = useMemo(() => {
+    const items = [];
+    for (const group of NAV) {
+      for (const item of group.items) {
+        items.push({ ...item, group: group.label });
+      }
+    }
+    return items;
+  }, []);
+
   useEffect(() => {
     const headings = Array.from(
       document.querySelectorAll<HTMLElement>(".prose-docs h2[id], .prose-docs h3[id]")
@@ -141,6 +153,21 @@ function DocsPage() {
     const el = tocRef.current.querySelector<HTMLElement>(`a[data-slug="${CSS.escape(active)}"]`);
     if (el) setThumb({ top: el.offsetTop, height: el.offsetHeight });
   }, [active]);
+
+  // Find current index and compute prev/next
+  const currentIndex = useMemo(() => 
+    allNavItems.findIndex((item) => item.slug === active)
+  , [allNavItems, active]);
+
+  const previous = currentIndex > 0 ? {
+    title: allNavItems[currentIndex - 1].text,
+    href: `#${allNavItems[currentIndex - 1].slug}`,
+  } : undefined;
+
+  const next = currentIndex < allNavItems.length - 1 ? {
+    title: allNavItems[currentIndex + 1].text,
+    href: `#${allNavItems[currentIndex + 1].slug}`,
+  } : undefined;
 
   return (
     <div className="min-h-screen bg-background">
@@ -242,6 +269,8 @@ function DocsPage() {
             <div className="animate-in fade-in duration-700">
               <Markdown content={rawContent} />
             </div>
+
+            <PageNavigation previous={previous} next={next} />
           </article>
         </main>
 
