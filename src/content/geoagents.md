@@ -143,7 +143,9 @@ Geo Agents 0.9.0-beta — todo en orden.
 
 ## Proveedores de IA
 
-Geo Agents es **multi-LLM**: puedes cambiar de proveedor en caliente, sin reiniciar la aplicación. Combina modelos **locales** (privacidad total, sin coste por token) con modelos **en la nube** (máxima capacidad) según cada tarea.
+GeoNexus es **multi-LLM**: puedes cambiar de proveedor en caliente, sin reiniciar la aplicación. Combina modelos **locales** (privacidad total, sin coste por token) con modelos **en la nube** (máxima capacidad) según cada tarea.
+
+![Configuración de proveedores de IA](/modelsia.png)
 
 ### Tabla de proveedores
 
@@ -187,8 +189,10 @@ geoagents ai --warmup        # precarga el modelo local por defecto
 ## Canales
 
 Los **canales** permiten interactuar con tus agentes desde fuera de la aplicación
-de escritorio. En esta versión Geo Agents integra **Telegram** como único canal,
+de escritorio. En esta versión GeoNexus integra **Telegram** como único canal,
 con más canales planificados en el roadmap.
+
+![Integración con Telegram](/telegram.png)
 
 ### Integración con Telegram
 
