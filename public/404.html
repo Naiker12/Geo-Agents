@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geo Agents</title>
+    <link rel="icon" type="image/svg+xml" href="/Geo-Agents/favicon.svg" />
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment,
+      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
+      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
+      // Note: this 404.html file must be at least 512 bytes for it to work
+      // with Internet Explorer (I added extra comments to make sure)
+      (function (l) {
+        if (
+          l.search.indexOf("?p=/") !== 0 && // avoid redirect loop
+          l.pathname.indexOf("/Geo-Agents/") === 0 // only apply to this repo
+        ) {
+          var pathSegments = l.pathname.substring("/Geo-Agents/".length).split("/");
+          var search = l.search.substring(1);
+          var hash = l.hash;
+          var redirect = "/Geo-Agents/?p=/" + pathSegments.join("/");
+          if (search) {
+            redirect += "&" + search.replace(/&/g, "~and~");
+          }
+          if (hash) {
+            redirect += hash;
+          }
+          l.replace(redirect);
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body></body>
+</html>
