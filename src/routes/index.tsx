@@ -113,7 +113,7 @@ function Home() {
                 Quick Start
               </a>
               <a
-                href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.0-beta.1/GeoNexus_0.1.0_x64_en-US.msi"
+                href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.2-beta.1/GeoNexus_0.1.2_x64_en-US.msi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
