@@ -10,6 +10,7 @@ import {
   Boxes,
   Brain,
   Github,
+  Download,
 } from "lucide-react";
 import panelImage from "/panel.png";
 
@@ -110,6 +111,15 @@ function Home() {
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
               >
                 Quick Start
+              </a>
+              <a
+                href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.0-beta.1/GeoNexus_0.1.0_x64_en-US.msi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Download className="h-4 w-4" />
+                Descargar
               </a>
             </div>
           </div>
