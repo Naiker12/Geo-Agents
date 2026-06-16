@@ -1,4 +1,5 @@
 import { CodeBlock } from "../CodeBlock";
+import telegramImage from "/telegram.png";
 
 export function ChannelsSection() {
   return (
@@ -9,7 +10,7 @@ export function ChannelsSection() {
       </p>
 
       <div className="my-6">
-        <img src="/telegram.png" alt="Integración con Telegram" className="w-full rounded-lg border" />
+        <img src={telegramImage} alt="Integración con Telegram" className="w-full rounded-lg border" />
       </div>
 
       <h3>Integración con Telegram</h3>

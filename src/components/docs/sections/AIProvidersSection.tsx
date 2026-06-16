@@ -1,4 +1,5 @@
 import { CodeBlock } from "../CodeBlock";
+import modelsiaImage from "/modelsia.png";
 
 export function AIProvidersSection() {
   return (
@@ -9,7 +10,7 @@ export function AIProvidersSection() {
       </p>
 
       <div className="my-6">
-        <img src="/modelsia.png" alt="Configuración de proveedores de IA" className="w-full rounded-lg border" />
+        <img src={modelsiaImage} alt="Configuración de proveedores de IA" className="w-full rounded-lg border" />
       </div>
 
       <h3>Tabla de proveedores</h3>

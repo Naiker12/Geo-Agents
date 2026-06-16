@@ -11,6 +11,7 @@ import {
   Brain,
   Github,
 } from "lucide-react";
+import panelImage from "/panel.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -134,7 +135,7 @@ function Home() {
           </div>
           <div className="grain hero-glow relative overflow-hidden rounded-2xl border border-border p-2 md:p-3">
             <img
-              src="/panel.png"
+              src={panelImage}
               alt="Interfaz de escritorio de GeoNexus mostrando el chat con IA, conversaciones y navegación lateral"
               className="relative w-full rounded-xl border border-border shadow-2xl"
               loading="lazy"
