@@ -9,7 +9,7 @@ export function InstallButtons() {
 
   const downloadLinks = {
     windows: {
-      x64: "https://github.com/Naiker12/GeoNexus/releases/download/v0.1.6/GeoNexus_0.1.6_x64_en-US.msi",
+      x64: "https://github.com/Naiker12/GeoNexus/releases/download/v0.1.6/GeoNexus_0.1.5_x64_en-US.msi",
       arm64: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_aarch64_en-US.msi",
     },
     macos: {
