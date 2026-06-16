@@ -22,35 +22,35 @@ export function DesktopInstall() {
   const downloads = {
     windows: {
       x64: {
-        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_x64_en-US.msi",
-        label: "GeoNexus_x64_en-US.msi",
+        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_x64_en-US.msi",
+        label: "GeoNexus_0.1.0_x64_en-US.msi",
         size: "~85 MB",
         arch: "x64",
       },
       arm64: {
-        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_aarch64_en-US.msi",
-        label: "GeoNexus_aarch64_en-US.msi",
+        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_aarch64_en-US.msi",
+        label: "GeoNexus_0.1.0_aarch64_en-US.msi",
         size: "~85 MB",
         arch: "ARM64",
       },
     },
     macos: {
       intel: {
-        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_x64.dmg",
-        label: "GeoNexus_x64.dmg",
+        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_x64.dmg",
+        label: "GeoNexus_0.1.0_x64.dmg",
         size: "~102 MB",
         arch: "Intel (x64)",
       },
       apple: {
-        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_aarch64.dmg",
-        label: "GeoNexus_aarch64.dmg",
+        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_aarch64.dmg",
+        label: "GeoNexus_0.1.0_aarch64.dmg",
         size: "~102 MB",
         arch: "Apple Silicon (M1/M2/M3)",
       },
     },
     linux: {
-      url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_amd64.AppImage",
-      label: "GeoNexus_amd64.AppImage",
+      url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_amd64.AppImage",
+      label: "GeoNexus_0.1.0_amd64.AppImage",
       size: "~98 MB",
       arch: "x64",
     },
