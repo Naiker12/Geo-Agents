@@ -38,7 +38,9 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm install --ignore-scripts=false
+          pnpm approve-builds
 
       - name: Build site
         env:
