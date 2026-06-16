@@ -1,3 +1,11 @@
 export { Introduction } from "./Introduction";
 export { QuickStart } from "./QuickStart";
 export { DesktopInstall } from "./DesktopInstall";
+export { CliSection } from "./CliSection";
+export { AIProvidersSection } from "./AIProvidersSection";
+export { ChannelsSection } from "./ChannelsSection";
+export { AppExperienceSection } from "./AppExperienceSection";
+export { MainModulesSection } from "./MainModulesSection";
+export { ProjectStatusSection } from "./ProjectStatusSection";
+export { RoadmapSection } from "./RoadmapSection";
+export { PythonSidecarSection } from "./PythonSidecarSection";

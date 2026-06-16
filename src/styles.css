@@ -195,6 +195,9 @@
   border-radius: 0 var(--radius) var(--radius) 0;
   color: var(--color-muted-foreground);
 }
+.dark .prose-docs blockquote {
+  background: oklch(0.279 0.041 260.031 / 0.2);
+}
 .prose-docs blockquote p {
   margin: 0.25rem 0;
 }
@@ -252,6 +255,9 @@
 }
 .prose-docs tr:hover td {
   background: oklch(0.86 0.16 92 / 0.04);
+}
+.dark .prose-docs tr:hover td {
+  background: oklch(0.279 0.041 260.031 / 0.3);
 }
 
 /* highlight.js minimal token colors */

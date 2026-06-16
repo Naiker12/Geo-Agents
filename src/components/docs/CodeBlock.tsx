@@ -12,14 +12,26 @@ export function CodeBlock({ children }: { children: string }) {
 
   return (
     <div className="relative my-4 group">
-      <pre className="rounded-lg bg-zinc-900 p-4 overflow-x-auto">
-        <code className="text-sm text-zinc-100 font-mono">
+      <pre className="rounded-lg p-4 overflow-x-auto" style={{ background: "var(--color-code)" }}>
+        <code className="text-sm font-mono" style={{ color: "var(--color-code-foreground)" }}>
           {children}
         </code>
       </pre>
       <button
         onClick={handleCopy}
-        className="absolute top-2 right-2 p-1.5 rounded-md bg-zinc-800 text-zinc-400 opacity-0 group-hover:opacity-100 transition-all hover:bg-zinc-700 hover:text-white"
+        className="absolute top-2 right-2 p-1.5 rounded-md transition-all"
+        style={{ 
+          background: "var(--color-secondary)",
+          color: "var(--color-muted-foreground)"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = "var(--color-accent)";
+          e.currentTarget.style.color = "var(--color-foreground)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = "var(--color-secondary)";
+          e.currentTarget.style.color = "var(--color-muted-foreground)";
+        }}
         aria-label="Copiar código"
       >
         {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}

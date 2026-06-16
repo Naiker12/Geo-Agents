@@ -19,4 +19,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  // Set base to your repo name for GitHub Pages deployment
+  base: process.env.GITHUB_PAGES === "true" ? "/Geo-Agents/" : "/",
 });

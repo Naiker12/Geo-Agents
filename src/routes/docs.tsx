@@ -3,7 +3,19 @@ import { type ComponentType, useEffect, useMemo, useRef, useState } from "react"
 import { SiteHeader } from "@/components/SiteHeader";
 import { AnimatedTerminal } from "@/components/AnimatedTerminal";
 import { PageNavigation } from "@/components/docs/PageNavigation";
-import { Introduction, QuickStart, DesktopInstall } from "@/components/docs/sections";
+import {
+  Introduction,
+  QuickStart,
+  DesktopInstall,
+  CliSection,
+  AIProvidersSection,
+  ChannelsSection,
+  AppExperienceSection,
+  MainModulesSection,
+  ProjectStatusSection,
+  RoadmapSection,
+  PythonSidecarSection,
+} from "@/components/docs/sections";
 import {
   ListTree,
   ChevronRight,
@@ -264,6 +276,14 @@ function DocsPage() {
               <Introduction />
               <QuickStart />
               <DesktopInstall />
+              <CliSection />
+              <AIProvidersSection />
+              <ChannelsSection />
+              <AppExperienceSection />
+              <MainModulesSection />
+              <PythonSidecarSection />
+              <ProjectStatusSection />
+              <RoadmapSection />
             </div>
 
             <PageNavigation previous={previous} next={next} />
