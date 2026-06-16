@@ -37,16 +37,25 @@ export function SiteHeader() {
           </Link>
           <ThemeSwitcher />
           <a
-            href="/docs#instalacion-de-escritorio"
+            href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.6/GeoNexus_0.1.6_x64_en-US.msi"
             className="hidden md:inline-flex"
           >
             <Button size="sm" className="flex items-center gap-1.5">
               <Download className="h-4 w-4" />
-              Descargar
+              Descargar .msi
             </Button>
           </a>
           <a
-            href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.5-beta.1/GeoNexus_0.1.5_x64_en-US.msi"
+            href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.6/GeoNexus_0.1.6_x64-setup.exe"
+            className="hidden md:inline-flex"
+          >
+            <Button size="sm" variant="outline" className="flex items-center gap-1.5">
+              <Download className="h-4 w-4" />
+              Descargar .exe
+            </Button>
+          </a>
+          <a
+            href="https://github.com/Naiker12/GeoNexus"
             className="grid h-9 w-9 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             aria-label="GitHub"
           >
