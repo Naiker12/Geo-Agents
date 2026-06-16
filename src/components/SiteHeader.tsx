@@ -46,7 +46,7 @@ export function SiteHeader() {
             </Button>
           </a>
           <a
-            href="https://github.com/Naiker12"
+            href="https://github.com/Naiker12/GeoNexus/releases/download/v0.1.5-beta.1/GeoNexus_0.1.5_x64_en-US.msi"
             className="grid h-9 w-9 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             aria-label="GitHub"
           >
