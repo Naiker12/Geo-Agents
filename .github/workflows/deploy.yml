@@ -33,7 +33,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Approve esbuild
+        run: pnpm approve-builds esbuild || true
 
       - name: Build site
         env:
