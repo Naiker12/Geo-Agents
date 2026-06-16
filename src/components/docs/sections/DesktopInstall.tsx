@@ -22,7 +22,7 @@ export function DesktopInstall() {
   const downloads = {
     windows: {
       x64: {
-        url: "https://github.com/Naiker12/GeoNexus/releases/download/v0.1.0-beta.1/GeoNexus_0.1.0_x64_en-US.msi",
+        url: "https://github.com/Naiker12/GeoNexus/releases/latest/download/GeoNexus_0.1.0_x64_en-US.msi",
         label: "GeoNexus_0.1.0_x64_en-US.msi",
         size: "~85 MB",
         arch: "x64",
