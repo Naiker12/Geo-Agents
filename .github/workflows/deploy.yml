@@ -24,7 +24,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 11
+          version: 9
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,9 +34,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-
-      - name: Approve esbuild
-        run: pnpm approve-builds esbuild || true
 
       - name: Build site
         env:
