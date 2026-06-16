@@ -1,25 +1,20 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger deployment on pushes to main branch
   push:
     branches: ["main"]
-  # Allow triggering deployment manually
   workflow_dispatch:
 
-# Set permissions needed for GitHub Pages deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +33,7 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --ignore-scripts=false
+        run: pnpm install --frozen-lockfile
 
       - name: Build site
         env:
@@ -50,7 +45,6 @@ jobs:
         with:
           path: ./dist
 
-  # Deploy job
   deploy:
     environment:
       name: github-pages
